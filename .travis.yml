@@ -4,10 +4,12 @@ go:
   - 1.4
 
 before_install:
+  - sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe restricted multiverse"
+  - sudo apt-get update
   - sudo apt-get install -y -q rpm git
   - sudo apt-get install -y -q fakeroot fakechroot
   - sudo apt-get install -y -q locales
-  - sudo apt-get install -y mock
+  - sudo apt-get install -y -q mock
   - sudo locale-gen en_US.utf8
 
 install:
