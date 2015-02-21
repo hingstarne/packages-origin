@@ -1,0 +1,14 @@
+language: go
+
+go:
+  - 1.4
+
+before_install:
+  - sudo apt-get install rpm
+  - sudo apt-get install -y -q fakeroot fakechroot
+  - sudo apt-get install -y -q locales
+  - sudo apt-get install -y -q mock
+  - sudo locale-gen en_US.utf8
+
+install:
+  - ./build/test.sh
